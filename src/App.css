@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
+  padding: 2rem;
+  /*height: 100vh;*/
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.smile{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /*grid-template-columns: auto;*/
+  flex: 0 50%;
+}
+.smile_box{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 15rem;
+  height: auto;
+  padding: 1rem;
+  margin: 1rem;
+
+}
+.smile_box_img img{
+  width: 100%;
+  max-width: 300px;
+}
+.winner.smile_box{
+  background: url("../public/assets/img/Winner.png");
+}
+button.btn_result_box {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 0.6rem;
+  width: 100%;
+  max-width: 200px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  background-color: crimson;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 1.2rem;
+  text-decoration: none;
 }
