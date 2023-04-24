@@ -24,7 +24,7 @@ function App() {
         let arrValRes = [];
         for(let key in obj){
                if(obj[key] === maxValResult){
-                   arrValRes.push(key)
+                   arrValRes.push(key);
                }
         }
         setWinnKey(arrValRes);
@@ -39,14 +39,14 @@ function App() {
               (showResult) ?
                   smilesData.map( (el,i) => {
                       if(winnKey.length < 1){
-                          return <Smile clickData={clickData} cID={i} srcImg={el.src} key={i}/>
+                          return <Smile clickData={clickData} cID={i} srcImg={el.src} key={i}/>;
                       }else if(winnKey.indexOf(`${i}`) !== -1) {
-                          return <Smile clickData={clickData} classN={'winner'} cID={i} srcImg={el.src} key={i}/>
+                          return <Smile clickData={clickData} classN={'winner'} cID={i} srcImg={el.src} key={i}/>;
                       }
                   })
                   :
                   smilesData.map( (el,i) => {
-                      return <Smile clickData={clickData} cID={i} srcImg={el.src} key={i}/>
+                      return <Smile clickData={clickData} cID={i} srcImg={el.src} key={i}/>;
                   })
           }
 

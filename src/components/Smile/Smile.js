@@ -1,11 +1,11 @@
 import {useState} from "react";
 
 function Smile({srcImg, clickData, cID, classN}){
-    const [count,setCount] = useState(0)
+    const [count,setCount] = useState(0);
 
     const clickCounter = () => {
         setCount(count + 1);
-        clickData(cID,count)
+        clickData(cID,count);
     }
 
     return <div className={`smile_box ${classN}`}>
