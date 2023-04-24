@@ -9,36 +9,27 @@ function App() {
     const [winnKey, setWinnKey] = useState([]);
     const [showResult, setShowResult] = useState(false);
     let obj = {};
+    let maxValResult = 0;
     const clickData = (clickID, clickVal) => {
-        if(obj[clickID] === clickID){
-            obj[clickID] = clickVal
-        }else{
-            obj[clickID] = clickVal ;
-        }
+            obj[clickID] = clickVal;
     }
 
     function getMaxVal(){
-        let arrVal = [];
-        for(let key in obj){
-            arrVal.push(obj[key])
-        }
-        return Math.max(...arrVal);
+        maxValResult = Math.max(...Object.values(obj));
     }
 
     let getResult = (e) => {
         e.preventDefault();
+        getMaxVal();
         let arrValRes = [];
         for(let key in obj){
-               if(obj[key] === getMaxVal()){
+               if(obj[key] === maxValResult){
                    arrValRes.push(key)
                }
         }
         setWinnKey(arrValRes);
-        console.log(winnKey.length)
         setShowResult(!showResult);
     }
-
-
 
   return (
     <div className="App">
@@ -47,7 +38,6 @@ function App() {
           {
               (showResult) ?
                   smilesData.map( (el,i) => {
-                      console.log(winnKey)
                       if(winnKey.length < 1){
                           return <Smile clickData={clickData} cID={i} srcImg={el.src} key={i}/>
                       }else if(winnKey.indexOf(`${i}`) !== -1) {
